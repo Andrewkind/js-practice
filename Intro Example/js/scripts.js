@@ -13,13 +13,16 @@ linkToClick.addEventListener("click", function (event) {
     console.log("Script works!");
     clickCount++;
     // If the user hasn't clicked 4 times, let them know (via console) that they'll have to click more.
-    if (clickCount < 4) {
-        console.log("You will have to click the link " + (4 - clickCount) + " more times before being redirected.");
+    if (clickCount < 4)
+    {
+        console.log("You will have to click the link "+(4-clickCount)+" more times before being redirected.");
         // Stop the link from redirecting.
         event.preventDefault();
     }
-    else {
+    else
+    {
         console.log("You should be redirected now.");
         // If they've clicked the 4 times, do not stop the behaviour and let the redirect occur.
     }
 });
+
