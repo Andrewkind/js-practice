@@ -37,12 +37,29 @@ for (image of images) {
     // Set the caption to the alt text of the image.
     caption.innerHTML = `${image.getAttribute("alt")}<br>`;
 
+    // Get tags attribute (full string).
     let tags = image.getAttribute("tags");
+    // Split the tags attribute on the space character, into a list of each tag.
     let tagList = tags.split(" ");
+    // For each tag...
     for (tag of tagList) {
-        caption.innerHTML += `<a href="#">${tag}</a>`
+        // Create a link.
+        let tagLink = document.createElement("a");
+        // Set the text of the link to our tag.
+        tagLink.innerHTML = tag;
+        // Set the reference of the link to the current page.
+        tagLink.setAttribute("href", "#");
+        // We add an event listenter to the click event.
+        tagLink.addEventListener("click", function (event) {
+            // We prevent the default behaviour from occuring (don't reload the page).
+            event.preventDefault();
+            // We set the value of the search bar to the tag value.
+            searchBar.setAttribute("value", tagLink.innerHTML);
+        });
+
+        // We add the tag to the paragraph (caption).
+        caption.appendChild(tagLink);
     }
-    console.log(tagList);
 
     // Add the caption to the div.
     newDiv.appendChild(caption);
