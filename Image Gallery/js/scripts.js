@@ -7,7 +7,8 @@ const searchBar = document.querySelector("#search");
 // Clear button for the search bar
 const clearButton = document.querySelector("#clear");
 
-for (image of images) {
+for (image of images)
+{
     // Create a new element;
     let newDiv = document.createElement("div");
 
@@ -33,7 +34,7 @@ for (image of images) {
 
     // Generate a paragraph to store the caption.
     let caption = document.createElement("p");
-
+    
     // Set the caption to the alt text of the image.
     caption.innerHTML = `${image.getAttribute("alt")}<br>`;
 
@@ -42,7 +43,8 @@ for (image of images) {
     // Split the tags attribute on the space character, into a list of each tag.
     let tagList = tags.split(" ");
     // For each tag...
-    for (tag of tagList) {
+    for (tag of tagList)
+    {
         // Create a link.
         let tagLink = document.createElement("a");
         // Set the text of the link to our tag.
@@ -50,7 +52,7 @@ for (image of images) {
         // Set the reference of the link to the current page.
         tagLink.setAttribute("href", "#");
         // We add an event listenter to the click event.
-        tagLink.addEventListener("click", function (event) {
+        tagLink.addEventListener("click", function(event) {
             // We prevent the default behaviour from occuring (don't reload the page).
             event.preventDefault();
             // We set the value of the search bar to the tag value.
@@ -66,7 +68,9 @@ for (image of images) {
 
 }
 
-// First image on the page.
-let testImage = images[0];
+
+
+
+
 
 
